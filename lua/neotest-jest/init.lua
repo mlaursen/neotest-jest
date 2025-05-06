@@ -409,6 +409,7 @@ function adapter.build_spec(args)
     table.insert(command, "--config=" .. config)
   end
 
+  vim.list_extend(command, args.extra_args or {})
   vim.list_extend(command, {
     "--no-coverage",
     "--testLocationInResults",
